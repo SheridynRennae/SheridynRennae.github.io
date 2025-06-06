@@ -106,7 +106,9 @@ A markup of the Mozilla Splash Page.
   <body>
     <header>
       <h1>Mozilla</h1>
-      <img src="firefox_logo-only_RGB-120.png" alt="Firefox Logo">
+      <img 
+        src="firefox_logo-only_RGB-120.png" 
+        alt="Firefox Logo">
 
 
     </header>
@@ -123,7 +125,6 @@ A markup of the Mozilla Splash Page.
       </article>
 
       <div class="further-info">
-        <!-- insert images with srcsets and sizes -->
         <a href="https://www.mozilla.org/en-US/firefox/new/">
           <img 
             src="firefox_logo-only_RGB.png" 
@@ -146,15 +147,23 @@ A markup of the Mozilla Splash Page.
             alt="Firefox addons, logo detail with puzzle pieces">
         </a>
         <a href="https://developer.mozilla.org/en-US/">
-          <img>
+          <img
+          src="mdn.svg"
+          alt="White mozilla dinosaur head on blue map background">
         </a>
         <div class="clearfix"></div>
       </div>
 
       <div class="red-panda">
-        <!-- insert picture element -->
+         <picture>
+          <source 
+          media="(max-width: 600px)" 
+          srcset="red-panda-600.jpg">
+          <img 
+          src="red-panda-large.jpg" 
+          alt="a red panda">
+          </picture>
       </div>
-
     </main>
   </body>
 </html>
