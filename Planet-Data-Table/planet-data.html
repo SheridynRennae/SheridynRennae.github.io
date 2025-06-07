@@ -13,11 +13,15 @@ An HTML data table on planets of the solar system.
     <title>Planet Data</title>
     <link href="minimal-table.css" rel="stylesheet" type="text/css">
   </head>
+
   <body>
     <h1>Planet Data</h1>
       <table>
         <caption>Data about the planets of our solar system (Planetary facts taken from <a href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">Nasa's Planetary Fact Sheet - Metric</a>)</caption>
-        
+        <colgroup>
+          <col span="2">
+          <col style="border: 2px solid black">
+        </colgroup>
         <thead>
           <tr>
             <td colspan="2"></td>
@@ -88,9 +92,9 @@ An HTML data table on planets of the solar system.
           </tr>
 
           <tr>
-            <th rowspan="4" colspan="1" scope="rowgroup">Jovian Planets</th>
-            <th rowspan="2" colspan="1" scope="rowgroup">Gas Giants</th>
-            <th scope="row">Jupiter</th>>
+            <th rowspan="4" scope="rowgroup">Jovian Planets</th>
+            <th rowspan="2" scope="rowgroup">Gas Giants</th>
+            <th scope="row">Jupiter</th>
             <td>1898</td>
             <td>142,984</td>
             <td>1326</td>
@@ -116,7 +120,7 @@ An HTML data table on planets of the solar system.
           </tr>
 
           <tr>
-            <th rowspan="2" colspan="1" scope="rowgroup">Ice Giants</th>
+            <th rowspan="2" scope="rowgroup">Ice Giants</th>
             <th scope="row">Uranus</th>
             <td>86.8</td>
             <td>51,118</td>
@@ -143,7 +147,7 @@ An HTML data table on planets of the solar system.
           </tr>
 
           <tr>
-            <th rowspan="3" colspan="2" scope="row">Dwarf Planets</th>
+            <th colspan="2" scope="row">Dwarf Planets</th>
             <th scope="row">Pluto</th>
             <td>0.0146</td>
             <td>2,370</td>
