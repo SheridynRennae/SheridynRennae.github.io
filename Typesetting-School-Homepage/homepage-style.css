@@ -96,3 +96,33 @@ h2 {
 h2 + p {
     text-indent: 20px;
 }
+
+a:link, a:visited {
+    color: #a66;
+    text-decoration: underline;
+}
+
+a:focus, a:hover {
+    text-decoration: none;
+}
+
+a {
+    outline: none;
+}
+
+a:active {
+    color: #6b3333;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(164, 61, 61, 0.771);
+}
+
+a[href^="http"]::after {
+  content: "";
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  margin-left: 0.25em;
+
+  background-size: 100%;
+  background-image: url("external-link-52.png");
+}
