@@ -15,5 +15,9 @@ div {
     margin: auto;
     /** Approximated font-size value. Default font size is 16px, so I 
     experimented by multiplying 16 by 1.12 = 17.92 px **/
+    text-align: center;
     font-size: 1.12rem;
+    background-color: red;
+    color: white;
+    text-shadow: 1px 1px 1px black;
 }
