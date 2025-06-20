@@ -74,9 +74,25 @@ header, footer {
 html {
     font-family: proza_libreregular, serif;
     font-size: 10px;
+    line-height: 17px;
+    letter-spacing: 0.5px;
+    word-spacing: 2px;
 }
 
 h1, h2 {
     font-family: arvoregular, sans-serif;
     letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 4rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.7rem;
+}
+
+h2 + p {
+    text-indent: 20px;
 }
