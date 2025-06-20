@@ -15,9 +15,6 @@ body {
   img {
       max-width: 100%;
       display: block;
-      float: left;
-      margin-right: 20px;
-      margin-bottom: 20px;
   }
   
   .logo {
@@ -63,8 +60,14 @@ body {
     margin: 0;
     padding: 0;
     max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
   }
 
   .feature {
-      width: 200px;
+    width: 200px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
   }
