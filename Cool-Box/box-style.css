@@ -9,4 +9,11 @@ html {
   font-family: sans-serif;
 }
 
-/* Your CSS below here */
+div {
+    width: 200px;
+    line-height: 9;
+    margin: auto;
+    /** Approximated font-size value. Default font size is 16px, so I 
+    experimented by multiplying 16 by 1.12 = 17.92 px **/
+    font-size: 1.12rem;
+}
