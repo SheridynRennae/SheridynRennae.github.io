@@ -97,7 +97,7 @@ h2 + p {
     text-indent: 20px;
 }
 
-a:link, a:visited {
+body a:link, body a:visited {
     color: #a66;
     text-decoration: underline;
 }
@@ -129,7 +129,7 @@ a[href^="http"]::after {
 
 ol, ul {
     margin: 1.7rem 0;
-    padding-left: 2rem;
+    padding-left: 3rem;
 }
 
 ol {
@@ -144,3 +144,33 @@ li {
     line-height: 1.7rem;
 }
 
+nav ul {
+    padding-left: 0;
+    margin-top: 0.8rem;
+}
+
+nav li {
+    list-style-type: none;
+    margin-bottom: 2rem;
+}
+
+nav li a:link, nav li a:visited {
+    font-size: 2rem;
+    display: inline-block;
+    width: 100%;
+    line-height: 3;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #a66;
+}
+
+nav li a:focus, nav li a:hover {
+    color: white;
+    background: #a66;
+}
+
+nav li a:active {
+    color: white;
+    font-weight: bold;
+    background: #6b3333;
+}
