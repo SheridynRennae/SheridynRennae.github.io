@@ -75,6 +75,23 @@ class Ball {
     this.x += this.velX;
     this.y += this.velY;
   }
+
+  // Check if ball has collided with another, if so, change colour.
+  collisionDetect() {
+    // For each ball in array, check every OTHER ball for any overlap.
+    for (const ball of balls) {
+      if (this !== ball) {
+        const dx = this.x - ball.x;
+        const dy = this.y - ball.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        // If there is overlap, change the colour of the ball.
+        if (distance < this.size + ball.size) {
+          ball.color = this.color = randomRGB();
+        }
+      }
+    }
+  }
 }
 
 // Initiailize array to store balls.
@@ -111,6 +128,8 @@ function loop() {
   for (const ball of balls) {
     ball.draw();
     ball.update();
+    // Check for overlap/collision.
+    ball.collisionDetect();
   }
 
   // Loop function again before updating canvas for smooth animation.
