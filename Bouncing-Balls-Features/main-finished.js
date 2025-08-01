@@ -85,12 +85,17 @@ class Ball extends Shape {
   }
 }
 
+// Defines EvilCircle class that extends Shape class.
 class EvilCircle extends Shape {
+    // Initialize position and properties.
     constructor(x, y) {
+        // Pass up values to Shape superclass.
         super(x, y, 20, 20)
+        // Set colour of evil circle to white and size to 10 px.
         this.color = "white";
         this.size = 10;
 
+        // Add keydown event to allow movement with computer keys.
         window.addEventListener("keydown", (e) => {
             switch (e.key) {
                 case "a":
@@ -108,13 +113,52 @@ class EvilCircle extends Shape {
             }
         });
     }
+
+    // Method to draw the evil circle on the canvas.
     draw() {
     ctx.beginPath();
     ctx.strokeStyle = this.color;
     ctx.lineWidth = 3;
     ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
     ctx.stroke();
-  }
+    }
+
+    // Method to make sure the evil circle stays on the canvas.
+    checkBounds() {
+        // If evil circle goes out of bounds, move it back onto the canvas by its radius.
+        if (this.x + this.size >= width) {
+            this.x -= this.size;
+        }
+
+        if (this.x - this.size <= 0) {
+            this.x += this.size;
+        }
+
+        if (this.y + this.size >= height) {
+            this.y -= this.size;
+        }
+
+        if (this.y - this.size <= 0) {
+            this.y += this.size;
+        }   
+    }
+
+    // Method to detect overlap/collisions of balls and the evil circle.
+    collisionDetect() {
+        for (const ball of balls) {
+            if (ball.exists) {
+                // Calculate distance between the evil circle and each ball.
+                const dx = this.x - ball.x;
+                const dy = this.y - ball.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                // Set the ball to not exist if it overlaps with the evil circle.
+                if (distance < this.size + ball.size) {
+                    ball.exists = false;
+                }
+            }
+        }        
+    }
 }
 
 const balls = [];
