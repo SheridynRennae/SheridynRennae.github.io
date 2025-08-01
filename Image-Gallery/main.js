@@ -48,6 +48,20 @@ for (const image of images) {
     });
 }
 
-
-
 /* Wiring up the Darken/Lighten button */
+// When the lighten/darken button is clicked:
+btn.addEventListener("click", () => {
+    // If set to darken, change class attrubute to light and set the text to "Lighten"
+    if (btn.getAttribute("class") === "dark") {
+        btn.setAttribute("class", "light");
+        btn.textContent = "Lighten";
+        // Darken the colour overlay on the image.
+        overlay.style.backgroundColor = "rgb(0 0 0 / 50%)";
+    } else {
+        // Change class attribute to light and set the text on button to "Darken".
+        btn.setAttribute("class", "dark");
+        btn.textContent = "Darken";
+        // Remove colour overlay on the image.
+        overlay.style.backgroundColor = "rgb(0 0 0 / 0%)";
+    }
+})
