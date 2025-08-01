@@ -1,3 +1,10 @@
+/*
+Name: Sheridyn Sharpe
+File: main.js
+Date: 25 July 2025
+A JavaScript file for reference to index.html, the bouncing balls webpage.
+*/
+
 // setup canvas
 
 const canvas = document.querySelector("canvas");
