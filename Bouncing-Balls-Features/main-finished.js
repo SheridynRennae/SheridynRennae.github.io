@@ -13,6 +13,11 @@ const ctx = canvas.getContext("2d");
 const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
 
+// Store a reference to the ball count paragraph.
+const para = document.querySelector('p');
+// Initialize a count variable for the amount of balls on the canvas.
+let ballCount = 0;
+
 // function to generate random number
 
 function random(min, max) {
@@ -155,6 +160,11 @@ class EvilCircle extends Shape {
                 // Set the ball to not exist if it overlaps with the evil circle.
                 if (distance < this.size + ball.size) {
                     ball.exists = false;
+
+                    // Ball counter logic, decrement count when ball no longer exists.
+                    ballCount--;
+                    // Update the ball count paragraph text on the window.
+                    para.textContent = "Ball Count: " + ballCount;
                 }
             }
         }        
@@ -177,6 +187,10 @@ while (balls.length < 25) {
   );
 
   balls.push(ball);
+  // Ball counter logic, increment the count when a new ball is pushed into the Balls array.
+  ballCount++;
+  // Update the ball count paragraph text on the window.
+  para.textContent = "Ball Count: " + ballCount;
 }
 
 // Create new evil circle instance, set it to appear at a random location on the canvas.
