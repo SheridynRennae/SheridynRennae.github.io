@@ -62,12 +62,17 @@ function result() {
     newStory = newStory.replace("Bob", name);
   }
 
+  // Function, if UK radio button is selected, convert weight and temp values.
   if(document.getElementById("uk").checked) {
-    const weight = Math.round(300);
-    const temperature =  Math.round(94);
+    const weight = `${Math.round(300 * 0.0714286)} stone`;
+    const temperature =  `${Math.round((94 - 32) * 5/9)} centigrade`;
 
+    // Replace corresponding temperature and weight to new values.
+    newStory = newStory.replace("94 fahrenheit", temperature);
+    newStory = newStory.replace("300 pounds", weight);
   }
 
-  story.textContent = ;
+  // Sets the text equal to the modified newStory variable.
+  story.textContent = newStory;
   story.style.visibility = 'visible';
 }
