@@ -33,14 +33,19 @@ const altText = {
 for (const image of images) {
     const newImage = document.createElement('img');
 
-    // Set the src and alt attribute of the img element using template literal (for src concat.) and array look-up.
+    // Set the src attribute to point to the images directory using template literal.
     newImage.setAttribute('src', `images/${image}`);
+    // Set the alt attribute using the altText object's descriptions.
     newImage.setAttribute('alt', altText[image]);
 
     // Adds new img to the thumb bar.
     thumbBar.appendChild(newImage);
 
-
+    // Add a click event listener to the thumbnail images, setting src and alt attributes when clicked.
+    newImage.addEventListener("click", (event) => {
+        displayedImage.src = event.target.src;
+        displayedImage.alt = event.target.alt;
+    });
 }
 
 
