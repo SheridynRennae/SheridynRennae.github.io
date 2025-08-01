@@ -1,3 +1,10 @@
+/*
+Name: Sheridyn Sharpe
+File: main.js
+Date: 25 July 2025
+A JavaScript file for reference to index.html, the silly story generator.
+*/
+
 1. COMPLETE VARIABLE AND FUNCTION DEFINITIONS
 
 const customName = document.getElementById('customname');
