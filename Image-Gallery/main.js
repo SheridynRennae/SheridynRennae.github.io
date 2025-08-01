@@ -1,3 +1,10 @@
+/*
+Name: Sheridyn Sharpe
+File: main.js
+Date: 25 July 2025
+A JavaScript file for reference to index.html, the image gallery.
+*/
+
 const displayedImage = document.querySelector('.displayed-img');
 const thumbBar = document.querySelector('.thumb-bar');
 
