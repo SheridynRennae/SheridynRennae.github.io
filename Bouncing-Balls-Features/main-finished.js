@@ -179,15 +179,26 @@ while (balls.length < 25) {
   balls.push(ball);
 }
 
+// Create new evil circle instance, set it to appear at a random location on the canvas.
+const evilCircle = new EvilCircle(random(0, width), random(0, height));
+
 function loop() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
   ctx.fillRect(0, 0, width, height);
 
   for (const ball of balls) {
-    ball.draw();
-    ball.update();
-    ball.collisionDetect();
-  }
+    // If the ball exists, draw, update, and detect collisions each frame.
+    if (ball.exists) {
+        ball.draw();
+        ball.update();
+        ball.collisionDetect();
+    }
+  }  
+
+    // Draw, check the bounds of, and detect collisions of the evil circle every frame.
+    evilCircle.draw();
+    evilCircle.checkBounds();
+    evilCircle.collisionDetect();
 
   requestAnimationFrame(loop);
 }
