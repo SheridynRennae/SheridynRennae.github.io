@@ -53,13 +53,13 @@ function result() {
 
     // Replace values in the story string with random values from corresponding arrays.
     newStory = newStory.replaceAll(":insertx:", xItem);
-    newStory = newStory.replace(":inserty", yItem);
-    newStory = newStory.replace(":insertz:", zItem);
+    newStory = newStory.replaceAll(":inserty:", yItem);
+    newStory = newStory.replaceAll(":insertz:", zItem);
 
   // Function, if a name was entered into customName, replace Bob with that name.  
   if(customName.value !== '') {
     const name = customName.value;
-    newStory = newStory.replace("Bob", name);
+    newStory = newStory.replaceAll("Bob", name);
   }
 
   // Function, if UK radio button is selected, convert weight and temp values.
@@ -68,8 +68,8 @@ function result() {
     const temperature =  `${Math.round((94 - 32) * 5/9)} centigrade`;
 
     // Replace corresponding temperature and weight to new values.
-    newStory = newStory.replace("94 fahrenheit", temperature);
-    newStory = newStory.replace("300 pounds", weight);
+    newStory = newStory.replaceAll("94 fahrenheit", temperature);
+    newStory = newStory.replaceAll("300 pounds", weight);
   }
 
   // Sets the text equal to the modified newStory variable.
