@@ -106,6 +106,14 @@ showHideBtn.onclick = function() {
   }
 };
 
+showHideBtn.onclick = toggleComments;
+
+showHideBtn.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') {
+    toggleComments();
+  }
+})
+
 // functionality for adding a new comment via the comments form
 
 const form = document.querySelector('.comment-form');
