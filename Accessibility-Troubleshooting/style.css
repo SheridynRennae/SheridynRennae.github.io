@@ -255,3 +255,23 @@ audio {
 .comment-container li p:nth-child(2) {
   flex: 5;
 }
+
+/* Audio Controls */
+      .transcript-container {
+        width: 480px;
+        margin: 10px auto;
+        border: 1px solid #ccc;
+        min-height: 38px;
+      }
+
+      .transcript {
+        height: 0;
+        width: 100%;
+        overflow: auto;
+        padding: 0 10px;
+      }
+
+      .transcript-container button {
+        width: 100%;
+        height: 36px;
+      }
