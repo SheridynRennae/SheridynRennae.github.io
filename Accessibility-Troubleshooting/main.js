@@ -1,3 +1,10 @@
+/*
+Name: Sheridyn Sharpe
+File: main.js
+Date: 05 August 2025
+A JavaScript file for reference to index.html, the accessible webpage about bears.
+*/
+
 // functionality for showing/hiding the comments section
 
 const showHideBtn = document.querySelector('.show-hide');
